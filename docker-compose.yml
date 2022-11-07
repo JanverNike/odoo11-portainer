@@ -9,7 +9,6 @@ services:
       - "PGDATA=/var/lib/postgresql/data/pgdata"
     volumes:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
-
  odoo:
     build: .
     restart: always
