@@ -14,8 +14,8 @@ services:
     restart: always
     depends_on:
       - odoo-db
-    expose:
-      - "8069"
+    ports:
+      - "8072:8069"
     environment:
       - "HOST=odoo-db"
       - "USER=odoo"
