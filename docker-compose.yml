@@ -9,6 +9,8 @@ services:
       - "PGDATA=/var/lib/postgresql/data/pgdata"
     volumes:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
+    network:
+      - odoo11_network
   odoo:
     build: .
 #   depends_on:
@@ -23,3 +25,9 @@ services:
       - /srv/odoo/odoo:/etc/odoo
       - /srv/odoo/addons:/mnt/extra-addons
       - odoo11_data:/var/lib/odoo
+     network:
+      - odoo11_network     
+ networks:
+   odoo11_network:
+     driver: bridge
+     attachable: false
