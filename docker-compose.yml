@@ -11,9 +11,8 @@ services:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
  odoo:
     build: .
-    restart: always
-    depends_on:
-      - odoo-db
+#   depends_on:
+#      - odoo-db
     ports:
       - "8072:8069"
     environment:
