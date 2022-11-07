@@ -10,7 +10,7 @@ services:
     volumes:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
  odoo:
-    build: .
+    build: Dockerfile
 #   depends_on:
 #      - odoo-db
     ports:
