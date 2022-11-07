@@ -22,4 +22,4 @@ services:
     volumes:
       - /srv/odoo/odoo:/etc/odoo
       - /srv/odoo/addons:/mnt/extra-addons
-      - odoo11-data:/var/lib/odoo
+      - odoo11_data:/var/lib/odoo
