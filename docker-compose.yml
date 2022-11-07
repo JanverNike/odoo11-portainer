@@ -9,5 +9,4 @@ services:
       - "PGDATA=/var/lib/postgresql/data/pgdata"
     volumes:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
-    networks:
-      - odoo11_network
+
