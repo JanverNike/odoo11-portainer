@@ -10,3 +10,18 @@ services:
     volumes:
       - /srv/odoo/db:/var/lib/postgresql/data/pgdata
 
+ odoo:
+    build: .
+    restart: always
+    depends_on:
+      - odoo-db
+    expose:
+      - "8069"
+    environment:
+      - "HOST=odoo-db"
+      - "USER=odoo"
+      - "PASSWORD=password"
+    volumes:
+      - /srv/odoo/odoo:/etc/odoo
+      - /srv/odoo/addons:/mnt/extra-addons
+      - odoo-web-data:/var/lib/odoo
