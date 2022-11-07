@@ -23,8 +23,8 @@ services:
       - "PASSWORD=password"
     volumes:
       - /srv/odoo/odoo:/etc/odoo
-      - /srv/odoo/addons:/mnt/extra-addons
-      - odoo11_data:/var/lib/odoo
+      - /var/lib/odoo11_addons:/mnt/extra-addons
+      - /var/lib/odoo11_data:/var/lib/odoo
      network:
       - odoo11_network     
  networks:
