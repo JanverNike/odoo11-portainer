@@ -36,10 +36,9 @@ RUN set -x; \
 
 # Copy entrypoint script and Odoo configuration file
 RUN pip3 install num2words
-COPY ./entrypoint.sh /
+COPY  --chmod=555 ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
-RUN chmod +x /entrypoint.sh \
-     && chown odoo /etc/odoo/odoo.conf
+RUN chown odoo /etc/odoo/odoo.conf
 
 # Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
 RUN mkdir -p /mnt/extra-addons \
