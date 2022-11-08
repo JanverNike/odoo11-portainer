@@ -12,9 +12,6 @@ services:
 #    network:
 #      - odoo11_network
   odoo:
-    configs:
-      - source: entrypoint.sh
-        mode: 0555 
     build: .
     depends_on:
       - odoo-db
