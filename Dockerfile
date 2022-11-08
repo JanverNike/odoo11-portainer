@@ -35,6 +35,7 @@ RUN set -x; \
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # Copy entrypoint script and Odoo configuration file
+USER root
 RUN pip3 install num2words
 COPY ./entrypoint.sh /
 RUN chmod a+rx /entrypoint.sh
