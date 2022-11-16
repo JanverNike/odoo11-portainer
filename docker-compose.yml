@@ -1,6 +1,6 @@
 version: '3'
 services:
-  odoo-db:
+  odoo11-db:
     image: postgres:10-alpine
     restart: always
     environment:
@@ -11,14 +11,14 @@ services:
       - /srv/odoo11/db:/var/lib/postgresql/data/pgdata
 #    network:
 #      - odoo11_network
-  odoo:
+  odoo11:
     build: .
     depends_on:
-      - odoo-db
+      - odoo11-db
     ports:
       - "8072:8069"
     environment:
-      - "HOST=odoo-db"
+      - "HOST=odoo11-db"
       - "USER=odoo"
       - "PASSWORD=password"
     volumes:
